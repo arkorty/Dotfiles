@@ -6,3 +6,4 @@ image/png=nsxiv.desktop
 image/jpg=nsxiv.desktop
 image/jpeg=nsxiv.desktop
 video/mp4=mpv.desktop
+application/pdf=org.pwmt.zathura.desktop
