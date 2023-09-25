@@ -17,4 +17,4 @@ alias sleep-off='xset s off -dpms'                                              
 alias screen-off='xset dpms force off'                                          # turn off display
 alias rate-mirrors='rate-mirrors --protocol https --entry-country india \
 arch | sudo tee /etc/pacman.d/mirrorlist'                                       # rate-mirrors alias
-alias remove-orphans='paru -Rsnu $(paru -Qdtq)'                                 # remove orphaned dependencies
+alias paru-remove-orphans='paru -Rsnu $(paru -Qdtq)'                            # remove orphaned dependencies
