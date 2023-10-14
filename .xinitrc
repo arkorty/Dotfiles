@@ -36,6 +36,9 @@ fi
 # compositor
 /usr/bin/picom &
 
+# battery status
+/usr/local/bin/battery &
+
 # restore wallpaper using nitrogen
 /usr/bin/feh --bg-fill $HOME/.wall --bg-fill $HOME/.wall
 
