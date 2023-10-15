@@ -116,17 +116,18 @@ cmd mkdir ${{
 }}
 
 # make file
-cmd mkfile ${{
+cmd touch ${{
   printf "File Name: "
   read ans
   $EDITOR $ans
 }}
 
-# set background
-cmd set_background %cp "$f" $HOME/.wall && feh --bg-fill $HOME/.wall --bg-fill $HOME/.wall
-
 cmd trash ${{
   trash-put "$f"
+}}
+
+cmd wal ${{
+  wal "$f"
 }}
 
 # trash command
@@ -164,10 +165,10 @@ map x cut
 map y copy
 map <enter> open
 map R reload
-map mf mkfile
-map md mkdir
-map sb set_background
+map T touch
+map M mkdir
 map C clear
+map W wal
 
 # archival functionality
 map ae extract
