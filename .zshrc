@@ -17,3 +17,4 @@ alias screen-off='xset dpms force off'                                      # tu
 alias rate-mirrors='rate-mirrors --protocol https --entry-country india \
 arch > mirrorlist'                                                          # rate-mirrors alias
 alias hx='helix'                                                            # alias for helix
+alias tmpv='systemd-run --user webtorrent --mpv'
