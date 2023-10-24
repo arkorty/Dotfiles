@@ -126,8 +126,8 @@ cmd trash ${{
   trash-put "$f"
 }}
 
-cmd wal ${{
-  wal "$f"
+cmd sbg ${{
+  sbg "$f"
 }}
 
 # trash command
@@ -168,7 +168,7 @@ map R reload
 map T touch
 map M mkdir
 map C clear
-map W wal
+map B sbg
 
 # archival functionality
 map ae extract
