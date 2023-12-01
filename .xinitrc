@@ -35,12 +35,13 @@ fi
 
 # compositor
 /usr/bin/picom &
+#/usr/local/bin/picom --experimental-backends --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 300 &
 
 # battery status
 /usr/local/bin/battery &
 
 # restore wallpaper using nitrogen
-/usr/bin/feh --bg-fill $HOME/.wall --bg-fill $HOME/.wall
+/usr/bin/feh --bg-fill $HOME/.bg --bg-fill $HOME/.bg
 
 # set keyboard layout
 /usr/bin/setxkbmap us
