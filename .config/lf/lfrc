@@ -83,8 +83,8 @@ cmd extract ${{
         *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
         *.tar.gz|*.tgz) tar xzvf $f;;
         *.tar.xz|*.txz) tar xJvf $f;;
-        *.zip) unzip $f;;
-        *.rar) unrar x $f;;
+        *.zip) 7z x $f;;
+        *.rar) 7z x $f;;
         *.7z) 7z x $f;;
         *) echo "Unsupported format" ;;
     esac
@@ -188,7 +188,7 @@ map DD trash
 map DR restore_trash
 
 # archival functionality
-map ax extract
+map ae extract
 map at tar
 map ag targz
 map ab tarbz2
