@@ -1,0 +1,191 @@
+# LF configuration file
+
+# ██╗     ███████╗██████╗  ██████╗
+# ██║     ██╔════╝██╔══██╗██╔════╝
+# ██║     █████╗  ██████╔╝██║     
+# ██║     ██╔══╝  ██╔══██╗██║     
+# ███████╗██║     ██║  ██║╚██████╗
+# ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝
+
+# General settings
+set ratios 1:2                      # Set the pane ratios to 1:2
+set cleaner ~/.config/lf/cleaner    # Set the cleaner script path
+set previewer ~/.config/lf/preview  # Set the previewer script path
+set drawbox true                    # Enable drawing box borders around files
+set icons true                      # Enable icons
+set info "size"                     # Display file size info
+
+# Shell settings
+set shell sh                        # Set shell to 'sh'
+set shellopts '-eu'                 # Set shell options: '-e' to exit on error, '-u' to error on unset variables
+set ifs "\n"                        # Set internal field separator to newline for proper filename splitting
+
+# Interface settings
+set scrolloff 10                    # Leave some space at the top and bottom of the screen
+
+# Key mappings for shell commands
+map <enter> shell                   # Use Enter key for shell commands
+
+# Execute current file
+map x $$f                           # Execute if executable
+map X !$f                           # Execute with 'sh'
+
+# File opener actions
+map o &mimeopen $f                  # Open file with 'mimeopen'
+map O $mimeopen --ask $f            # Ask before opening file with 'mimeopen'
+
+# Define a custom 'open' command
+cmd open ${{
+    test -L $f && f=$(readlink -f $f)
+    case $(file --mime-type $f -b) in
+        text/*) $EDITOR $fx;;
+        *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+# Define a custom 'rename' command without prompt for overwrite (commented out)
+#cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
+#map r push :rename<space>
+
+# Define a custom 'remove' command
+cmd remove ${{
+    set -f
+    printf "$fx\n"
+    printf "confirm you want to remove the above file(s)? [y/n]: "
+    read ans
+    [ "$ans" = "y" ] && rm -rf $fx
+}}
+
+# Key mapping for trash or delete command
+map <remove> trash                  # Map delete key to 'trash' command
+#map <remove> delete                # Alternatively, map delete key to 'delete' command (commented out)
+
+# Extract files with appropriate commands
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.tar) tar xvf $f;;
+        *.zip) 7z x $f;;
+        *.rar) 7z x $f;;
+        *.7z) 7z x $f;;
+        *) echo "unsupported format" ;;
+    esac
+}}
+
+# Archive current file or selected files with tar and gzip
+cmd targz ${{
+  set -f
+  tar cvzf "$f.tar.gz" "$f"
+}}
+
+# Compress current file or selected files into a zip archive
+cmd zip ${{
+  set -f
+  7z a -tzip "$f.zip" "$f"
+}}
+
+# Compress current file or selected files into a 7z archive
+cmd 7z ${{
+  set -f
+  7z a "$f.7z" "$f"
+}}
+
+# Create a new directory with user input for the directory name
+cmd mkdir ${{
+  printf "directory name: "
+  read ans
+  mkdir $ans
+}}
+
+# Create a new file with user input for the file name and open it in the default editor
+cmd touch ${{
+  printf "file name: "
+  read ans
+  $EDITOR $ans
+}}
+
+# Move the current file or selected files to trash
+cmd trash ${{
+  trash-put "$f"
+}}
+
+# Loop the current media file infinitely in fullscreen mode using mpv
+cmd loop ${{
+  mpv --loop=inf --fullscreen "$f"
+}}
+
+# Improved trash command to handle multiple files
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    file=${files%%;*}
+
+    trash-put "$(basename "$file")"
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+
+# Synchronize the current or selected files to the current directory with progress information
+cmd rsync ${{
+  rsync -ah --info=progress2 "$fx" $(pwd)
+}}
+
+# Set the current file as the desktop wallpaper
+cmd wall ${{
+  cp "$f" ~/.wall
+  feh --bg-fill $HOME/.wall --bg-fill $HOME/.wall
+}}
+
+# Remove some default key mappings
+map m
+map n
+map "'"
+map '"'
+map d
+
+# Basic functionality key mappings
+map p paste
+map x cut
+map y copy
+map R reload
+map c clear
+map <esc> unselect
+map dd trash
+map u $trash-restore
+map DD remove
+map t touch
+map m mkdir
+
+# Archival functionality key mappings
+map ax extract
+map ag targz
+map az zip
+map aZ 7z
+
+# Directory navigation key mappings
+map ga cd ~/Archives
+map gA cd ~/Auth
+map gd cd ~/Documents
+map gD cd ~/Downloads
+map gp cd ~/Pictures
+map gm cd ~/Mnt
+map gM cd ~/Media
+map gc cd ~/.config
+map gC cd ~/Code
+map gv cd ~/Videos
+map gb cd ~/.local/bin
+map gt cd ~/.local/share/Trash/files
+
+# Set media actions key mappings
+map W wall
+map L loop
+
+# sync
+map S :rsync; unselect

@@ -1,0 +1,152 @@
+/************************************************
+ * ROFI Color theme
+ * User: arkorty
+ * Copyright: 2024 leofa
+ ***********************************************/
+
+* {
+    selected-normal-foreground:  #0d0f18;
+    foreground:                  #c4cbd4;
+    normal-foreground:           @foreground;
+    alternate-normal-background: rgba(64, 69, 82, 0.59);
+    red:                         #dc322f;
+    selected-urgent-foreground:  #0d0f18;
+    blue:                        #268bd2;
+    urgent-foreground:           #cc6666;
+    alternate-urgent-background: rgba(75, 81, 96, 0.9);
+    active-foreground:           #65acff;
+    lightbg:                     #eee8d5;
+    selected-active-foreground:  #0d0f18;
+    alternate-active-background: rgba(75, 81, 96, 0.89);
+    background:                  rgba(45, 48, 59, 0.95);
+    alternate-normal-foreground: @foreground;
+    normal-background:           @background;
+    lightfg:                     #586875;
+    selected-normal-background:  #e7e8eb;
+    border-color:                #7c8389;
+    spacing:                     2;
+    separatorcolor:              #1d1f21;
+    urgent-background:           rgba(29, 31, 33, 0.17);
+    selected-urgent-background:  #e7e8eb;
+    alternate-urgent-foreground: @urgent-foreground;
+    background-color:            rgba(0, 0, 0, 0);
+    alternate-active-foreground: @active-foreground;
+    active-background:           rgba(29, 31, 33, 0.17);
+    selected-active-background:  #e7e8eb;
+}
+
+
+window {
+    width: 800px;
+    height: 600px;
+    background-color: rgba( 45, 45, 45, 0.9 );
+    border: 0;
+    padding: 0;
+}
+mainbox {
+    padding: 10px;
+}
+textbox {
+    text-color: #abb2bf;
+    font-size: 14px;
+}
+listview {
+    fixed-height: 0;
+    border: 2px 0px 0px;
+    border-color: @separatorcolor;
+    spacing: 6px;
+    scrollbar: true;
+    padding: 2px 0px 0px;
+}
+element {
+    border: 0;
+    padding: 6px;
+}
+element-icon {
+    size:   1.0em;
+}
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+element.normal.normal {
+    background-color: #282c34;
+    text-color:       #abb2bf;
+}
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+element.selected.normal {
+    background-color: #e7e8eb;
+    text-color:       #0d0f18;
+}
+element.selected.urgent {
+    background-color: #e7e8eb;
+    text-color:       #0d0f18;
+}
+element.selected.active {
+    background-color: #e7e8eb;
+    text-color:       #0d0f18;
+}
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-color: @normal-foreground;
+    handle-width: 8px ;
+    padding:      0;
+}
+mode-switcher {
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+}
+button {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+button.selected {
+    background-color: #e7e8eb;
+    text-color:       #0d0f18;
+}
+inputbar {
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    1px ;
+}
+case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+entry {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+prompt {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @normal-foreground;
+}
