@@ -150,4 +150,4 @@ configuration {
   }
 }
 
-@theme "gruvbox-dark"
+@theme "gruvbox-dark-hard"
