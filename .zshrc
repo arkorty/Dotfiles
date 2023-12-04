@@ -19,4 +19,4 @@ arch > mirrorlist'                                                          # ra
 alias hx='helix'                                                            # alias for helix
 alias hex='hexyl'                                                           # alias for hexyl
 alias loop='mpv --loop=inf --fullscreen'                                    # alias for mpv to loop
-alias torp='systemd-run --user webtorrent download --mpv'                   # alias for webtorrent
+alias torp='setsid -f webtorrent download --mpv'                            # alias for webtorrent
