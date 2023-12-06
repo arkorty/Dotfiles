@@ -15,7 +15,7 @@ alias fastfetch='fastfetch --load-config examples/2 --logo-type builtin \
 alias sleep-off='xset s off -dpms'                                          # turn off display sleep
 alias screen-off='xset dpms force off'                                      # turn off display
 alias rate-mirrors='rate-mirrors --protocol https --entry-country india \
-arch > mirrorlist'                                                          # rate-mirrors alias
+arch | tee mirrorlist'                                                      # rate-mirrors alias
 alias hx='helix'                                                            # alias for helix
 alias hex='hexyl'                                                           # alias for hexyl
 alias loop='mpv --loop=inf --fullscreen'                                    # alias for mpv to loop
