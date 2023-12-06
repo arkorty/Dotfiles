@@ -20,4 +20,5 @@ alias hx='helix'                                                            # al
 alias hex='hexyl'                                                           # alias for hexyl
 alias loop='mpv --loop=inf --fullscreen'                                    # alias for mpv to loop
 alias torp='setsid -f webtorrent download --mpv'                            # alias for webtorrent
-alias dot='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dot='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'                 # alias for git to manage dotfiles in a bare repo
+alias skinstall='rm -f config.h patches.h && sudo make clean install'       # alias for suckless make install command
