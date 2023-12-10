@@ -83,6 +83,7 @@ cmd extract ${{
         *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
         *.tar.gz|*.tgz) tar xzvf $f;;
         *.tar.xz|*.txz) tar xJvf $f;;
+        *.tar) tar xvf $f;;
         *.zip) 7z x $f;;
         *.rar) 7z x $f;;
         *.7z) 7z x $f;;
