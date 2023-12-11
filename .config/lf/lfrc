@@ -140,8 +140,8 @@ cmd trash ${{
   trash-put "$f"
 }}
 
-cmd sbg ${{
-  sbg "$f"
+cmd set-wall ${{
+  set-wall "$f"
 }}
 
 cmd screen_saver ${{
@@ -183,7 +183,7 @@ map R reload
 map T touch
 map M mkdir
 map C clear
-map B sbg
+map B set-wall
 map S screen_saver
 map DD trash
 map DR restore_trash
