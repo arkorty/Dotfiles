@@ -16,6 +16,7 @@ alias loop='mpv --loop=inf --fullscreen'                                    # al
 alias webt='setsid -f webtorrent download --mpv'                            # alias for webtorrent
 alias dot='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'                 # alias for git to manage dotfiles in a bare repo
 alias skinstall='rm -f config.h patches.h && sudo make clean install'       # alias for suckless make install command
+alias fzf-open='systemd-run --user xdg-open $(fzf)'                         # alias for xdg-open using fuzzy search
 alias fastfetch='fastfetch --load-config examples/2 --logo-type builtin \
 --logo linux --logo-padding 2 --logo-padding-top 1'                         # alias for fastfetch
 alias rate-mirrors='rate-mirrors --protocol https --entry-country india \
