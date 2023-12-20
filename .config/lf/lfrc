@@ -126,7 +126,7 @@ cmd trash ${{
 }}
 
 cmd set_wall ${{
-  set_wall "$f"
+  set-wall "$f"
 }}
 
 cmd screen_saver ${{
@@ -171,7 +171,7 @@ map md mkdir
 map sw set_wall
 map ss screen_saver
 map dd trash
-map rr restore_trash
+map dz restore_trash
 
 # archival functionality
 map ax extract
