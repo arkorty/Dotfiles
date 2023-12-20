@@ -92,29 +92,14 @@ cmd extract ${{
 }}
 
 # compress current file or selected files with tar and gunzip
-cmd zip ${{
-  set -f
-  zip -r "$f" "$f"
-}}
-
-cmd tar ${{
-  set -f
-  tar cvf "$f.tar" "$f"
-}}
-
-cmd targz ${{
+cmd tar_gz ${{
   set -f
   tar cvzf "$f.tar.gz" "$f"
 }}
 
-cmd tarbz2 ${{
+cmd zip ${{
   set -f
-  tar cjvf "$f.tar.bz2" "$f"
-}}
-
-cmd tarxz ${{
-  set -f
-  tar cJvf "$f.tar.xz" "$f"
+  7z a -tzip "$f.zip" "$f"
 }}
 
 cmd 7z ${{
@@ -130,7 +115,7 @@ cmd mkdir ${{
 }}
 
 # make file
-cmd touch ${{
+cmd mkfile ${{
   printf "File Name: "
   read ans
   $EDITOR $ans
@@ -140,8 +125,8 @@ cmd trash ${{
   trash-put "$f"
 }}
 
-cmd set-wall ${{
-  set-wall "$f"
+cmd set_wall ${{
+  set_wall "$f"
 }}
 
 cmd screen_saver ${{
@@ -180,20 +165,17 @@ map p paste
 map x cut
 map y copy
 map R reload
-map T touch
-map M mkdir
 map C clear
-map B set-wall
-map S screen_saver
-map DD trash
-map DR restore_trash
+map mf mkfile
+map md mkdir
+map sw set_wall
+map ss screen_saver
+map dd trash
+map rr restore_trash
 
 # archival functionality
-map ae extract
-map at tar
-map ag targz
-map ab tarbz2
-map ax tarxz
+map ax extract
+map at tar_gz
 map az zip
 map a7 7z
 
