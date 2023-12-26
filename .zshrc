@@ -23,3 +23,4 @@ alias rate-mirrors='rate-mirrors --protocol https --entry-country india \
 arch | tee mirrorlist'                                                      # rate-mirrors alias
 alias vpn-connect='sudo protonvpn connect --fastest'
 alias vpn-disconnect='sudo protonvpn disconnect'
+alias rm-orphans='paru -Rsnu $(paru -Qdtq)'
