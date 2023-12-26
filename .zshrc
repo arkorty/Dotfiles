@@ -21,3 +21,5 @@ alias fastfetch='fastfetch --load-config examples/2 --logo-type builtin \
 --logo linux --logo-padding 2 --logo-padding-top 1'                         # alias for fastfetch
 alias rate-mirrors='rate-mirrors --protocol https --entry-country india \
 arch | tee mirrorlist'                                                      # rate-mirrors alias
+alias vpn-connect='sudo protonvpn connect --fastest'
+alias vpn-disconnect='sudo protonvpn disconnect'
