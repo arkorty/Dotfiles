@@ -23,7 +23,7 @@ background = "#1e2127"
 foreground = "#abb2bf"
 
 [font]
-size = 7.0
+size = 8.0
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
@@ -35,3 +35,7 @@ opacity = 0.9
 [window.padding]
 x = 4
 y = 4
+
+[window.dimensions]
+columns = 160
+lines = 40
