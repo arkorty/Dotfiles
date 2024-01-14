@@ -18,7 +18,7 @@ alias dot='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'                 # al
 alias skinstall='rm -f config.h patches.h && sudo make clean install'       # alias for suckless make install command
 alias fzf-open='systemd-run --user xdg-open $(fzf)'                         # alias for xdg-open using fuzzy search
 alias fastfetch='fastfetch --load-config examples/2 --logo-type builtin \
---logo linux --logo-padding 2 --logo-padding-top 1'                         # alias for fastfetch
+--logo arch --logo-padding 2 --logo-padding-top 1'                         # alias for fastfetch
 alias rate-mirrors='rate-mirrors --protocol https --entry-country india \
 arch | tee mirrorlist'                                                      # rate-mirrors alias
 alias vpn-connect='sudo protonvpn connect --fastest'
