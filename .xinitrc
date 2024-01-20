@@ -44,6 +44,7 @@ fi
 /usr/bin/feh --bg-fill $HOME/.wall --bg-fill $HOME/.wall
 
 # set keyboard layout
+/usr/bin/setxkbmap -option caps:swapescape
 /usr/bin/setxkbmap us
 
 # polkit agent (manages gui authentication)
