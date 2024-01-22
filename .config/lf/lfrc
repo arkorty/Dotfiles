@@ -55,21 +55,14 @@ cmd open ${{
 #cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 #map r push :rename<space>
 
-# make sure trash folder exists
-# %mkdir -p ~/.trash
-
-# move current file or selected files to trash folder
-# (also see 'man mv' for backup/overwrite options)
-cmd trash %set -f; mv $fx ~/.trash
-
 # define a custom 'delete' command
-# cmd delete ${{
-#     set -f
-#     printf "$fx\n"
-#     printf "delete?[y/n]"
-#     read ans
-#     [ "$ans" = "y" ] && rm -rf $fx
-# }}
+cmd delete ${{
+    set -f
+    printf "$fx\n"
+    printf "Confirm you want to delete the above file(s)? [y/n]: "
+    read ans
+    [ "$ans" = "y" ] && rm -rf $fx
+}}
 
 # use '<delete>' key for either 'trash' or 'delete' command
 map <delete> trash
@@ -152,6 +145,11 @@ cmd restore_trash ${{
   trash-restore
 }}
 
+cmd rsync ${{
+  rsync -ah --info=progress2 $fx $(pwd)
+  unselect
+}}
+
 # remove some defaults
 map m
 map n
@@ -160,18 +158,16 @@ map '"'
 map d
 
 # basic functionality
-map . set hidden!
 map p paste
 map x cut
 map y copy
 map R reload
 map C clear
+map dd trash
+map DD delete
+map dr restore_trash
 map mf mkfile
 map md mkdir
-map sw set_wall
-map ss screen_saver
-map dd trash
-map dz restore_trash
 
 # archival functionality
 map ax extract
@@ -188,3 +184,10 @@ map gs cd ~/Source
 map gv cd ~/Videos/recordings
 map gb cd ~/.local/bin
 map gt cd ~/.local/share/Trash/files
+
+# set media as ...
+map w set_wall
+map L screen_saver
+
+# sync
+map S rsync
