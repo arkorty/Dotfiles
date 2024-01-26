@@ -1,3 +1,10 @@
+# ██╗     ███████╗██████╗  ██████╗
+# ██║     ██╔════╝██╔══██╗██╔════╝
+# ██║     █████╗  ██████╔╝██║     
+# ██║     ██╔══╝  ██╔══██╗██║     
+# ███████╗██║     ██║  ██║╚██████╗
+# ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝
+
 # user setting
 set ratios 1:2:4
 set cleaner ~/.config/lf/cleaner
@@ -55,18 +62,18 @@ cmd open ${{
 #cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 #map r push :rename<space>
 
-# define a custom 'delete' command
-cmd delete ${{
+# define a custom 'remove' command
+cmd remove ${{
     set -f
     printf "$fx\n"
-    printf "Confirm you want to delete the above file(s)? [y/n]: "
+    printf "Confirm you want to remove the above file(s)? [y/n]: "
     read ans
     [ "$ans" = "y" ] && rm -rf $fx
 }}
 
-# use '<delete>' key for either 'trash' or 'delete' command
-map <delete> trash
-# map <delete> delete
+# use '<remove>' key for either 'trash' or 'delete' command
+map <remove> trash
+# map <remove> delete
 
 # extract the current file with the right command
 # (xkcd link: https://xkcd.com/1168/)
@@ -85,7 +92,7 @@ cmd extract ${{
 }}
 
 # compress current file or selected files with tar and gunzip
-cmd tar_gz ${{
+cmd targz ${{
   set -f
   tar cvzf "$f.tar.gz" "$f"
 }}
@@ -108,7 +115,7 @@ cmd mkdir ${{
 }}
 
 # make file
-cmd mkfile ${{
+cmd touch ${{
   printf "File Name: "
   read ans
   $EDITOR $ans
@@ -118,12 +125,8 @@ cmd trash ${{
   trash-put "$f"
 }}
 
-cmd set_wall ${{
-  set-wall "$f"
-}}
-
-cmd screen_saver ${{
-  screen-saver "$f"
+cmd loop ${{
+  mpv --loop=inf --fullscreen "$f"
 }}
 
 # trash command
@@ -141,13 +144,12 @@ cmd trash ${{
   done
 }}
 
-cmd restore_trash ${{
+cmd trash ${{
   trash-restore
 }}
 
 cmd rsync ${{
   rsync -ah --info=progress2 $fx $(pwd)
-  unselect
 }}
 
 # remove some defaults
@@ -161,33 +163,34 @@ map d
 map p paste
 map x cut
 map y copy
-map R reload
-map C clear
+map ctrl-r reload
+map c clear
+map <esc> unselect
 map dd trash
-map DD delete
-map dr restore_trash
-map mf mkfile
-map md mkdir
+map u trash
+map DD remove
+map t touch
+map m mkdir
 
 # archival functionality
 map ax extract
-map at tar_gz
+map ag targz
 map az zip
-map a7 7z
+map aZ 7z
 
 # movement
 map gd cd ~/Documents
 map gD cd ~/Downloads
 map gp cd ~/Pictures
 map gc cd ~/.config
-map gs cd ~/Source
-map gv cd ~/Videos/recordings
+map gC cd ~/Code
+map gv cd ~/Videos
 map gb cd ~/.local/bin
 map gt cd ~/.local/share/Trash/files
 
 # set media as ...
-map w set_wall
-map L screen_saver
+map w $set-wall "$f"
+map L loop
 
 # sync
-map S rsync
+map S :rsync; unselect
