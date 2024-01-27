@@ -7,6 +7,8 @@ zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"                        
 autoload -Uz compinit
 compinit
 
+compdef _gnu_generic delta
+
 [ -f ~/.config/lf/LF_ICONS ] && {                                                   # load lf file icons
 	LF_ICONS="$(tr '\n' ':' <~/.config/lf/LF_ICONS)" \
 		&& export LF_ICONS
