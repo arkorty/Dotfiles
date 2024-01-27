@@ -30,17 +30,16 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-# status info utility
+# device stat utility
 /usr/local/bin/slstatus &
 
 # compositor
 /usr/bin/picom &
-#/usr/local/bin/picom --experimental-backends --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 300 &
 
-# battery status
-/usr/local/bin/battery &
+# battery status notification
+#/usr/local/bin/battery &
 
-# restore wallpaper using nitrogen
+# restore wallpaper using feh
 /usr/bin/feh --bg-fill $HOME/.wall --bg-fill $HOME/.wall
 
 # set keyboard layout
