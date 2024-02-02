@@ -17,6 +17,7 @@ alias lf='lfrun'                                                             # s
 alias cat='bat -p'                                                           # bat as cat
 alias hx='helix'                                                             # modern text editor
 alias hex='hexyl'                                                            # binary pretty print
+alias xcb='xclip -selection clipboard'                                       # copy to clipboard
 alias aria2c='aria2c -d $HOME/Downloads'                                     # aria2c with download path
 alias loop='mpv --loop=inf --fullscreen'                                     # loop videos via mpv
 alias dot='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'                  # version controlled dotfiles
