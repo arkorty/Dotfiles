@@ -179,9 +179,13 @@ map az zip
 map aZ 7z
 
 # movement
+map ga cd ~/Archives
+map gA cd ~/Auth
 map gd cd ~/Documents
 map gD cd ~/Downloads
 map gp cd ~/Pictures
+map gm cd ~/Mnt
+map gM cd ~/Media
 map gc cd ~/.config
 map gC cd ~/Code
 map gv cd ~/Videos
@@ -189,7 +193,7 @@ map gb cd ~/.local/bin
 map gt cd ~/.local/share/Trash/files
 
 # set media as ...
-map w $set-wall "$f"
+map W $set-wall "$f"
 map L loop
 
 # sync
