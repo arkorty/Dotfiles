@@ -61,7 +61,7 @@
     progress_bar_max_width = 300
 
     # Set progress bar color
-    highlight = "#08bdba"
+    highlight = "#78a9ff"
 
 
     # Show how many messages are currently hidden (because of
@@ -71,7 +71,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 0
+    transparency = 20
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -93,7 +93,7 @@
     frame_width = 1
 
     # Defines color of the frame around the notification window.
-    frame_color = "#076678"
+    frame_color = "#78a9ff"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
