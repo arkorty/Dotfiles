@@ -43,8 +43,7 @@ fi
 /usr/bin/feh --bg-fill $HOME/.wall --bg-fill $HOME/.wall
 
 # set keyboard layout
-/usr/bin/setxkbmap -option caps:swapescape
-/usr/bin/setxkbmap us
+/usr/bin/setxkbmap -layout us -option "caps:swapescape"
 
 # polkit agent (manages gui authentication)
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
