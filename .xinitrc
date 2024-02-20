@@ -37,7 +37,7 @@ fi
 /usr/bin/picom &
 
 # battery status notification
-#/usr/local/bin/battery &
+/usr/local/bin/battery &
 
 # restore wallpaper using feh
 /usr/bin/feh --bg-fill $HOME/.wall --bg-fill $HOME/.wall
