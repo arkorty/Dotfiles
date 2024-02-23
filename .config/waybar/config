@@ -16,9 +16,19 @@
         "warp-on-scroll": false,
         "format": "{icon}",
         "format-icons": {
-            "urgent": "",
-            "active": "",
-            "default": ""
+            "1": "term",
+            "2": "edit",
+            "3": "www",
+            "4": "file",
+            "5": "doc",
+            "6": "comm",
+            "7": "media",
+            "8": "daem",
+            "9": "misc",
+            "10": "misc",
+            //"urgent": "",
+            //"active": "",
+            //"default": ""
         },
         "persistent-workspaces": {
             "*": 10,
