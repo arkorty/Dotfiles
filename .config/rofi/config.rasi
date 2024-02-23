@@ -1,8 +1,8 @@
 configuration {
-	font: "JetBrains Mono 11";
+	font: "JetBrains Mono 9";
 /*	modes: "window,drun,run,ssh";*/
 /*	location: 0;*/
-	yoffset: -256;
+	yoffset: -128;
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
 /*	show-icons: false;*/
