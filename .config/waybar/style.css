@@ -103,12 +103,11 @@ button {
 }
 
 #clock {
-  background-color: #64727d;
+  background-color: transparent;
 }
 
 #battery {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: transparent;
 }
 
 #battery.charging,
@@ -139,12 +138,11 @@ label:focus {
 }
 
 #cpu {
-  background-color: #2ecc71;
-  color: #000000;
+  background-color: transparent;
 }
 
 #memory {
-  background-color: #9b59b6;
+  background-color: transparent;
 }
 
 #disk {
@@ -152,12 +150,11 @@ label:focus {
 }
 
 #backlight {
-  background-color: #90b1b1;
-  color: #000000;
+  background-color: transparent;
 }
 
 #network {
-  background-color: #2980b9;
+  background-color: transparent;
 }
 
 #network.disconnected {
@@ -165,8 +162,7 @@ label:focus {
 }
 
 #pulseaudio {
-  background-color: #90b1b1;
-  color: #000000;
+  background-color: transparent;
 }
 
 #pulseaudio.muted {
@@ -175,8 +171,7 @@ label:focus {
 }
 
 #wireplumber {
-  background-color: #fff0f5;
-  color: #000000;
+  background-color: transparent;
 }
 
 #wireplumber.muted {
@@ -208,7 +203,7 @@ label:focus {
 }
 
 #tray {
-  background-color: #2980b9;
+  background-color: transparent;
 }
 
 #tray > .passive {
