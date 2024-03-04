@@ -144,10 +144,6 @@ cmd trash ${{
   done
 }}
 
-cmd trash ${{
-  trash-restore
-}}
-
 cmd rsync ${{
   rsync -ah --info=progress2 $fx $(pwd)
 }}
@@ -167,7 +163,7 @@ map ctrl-r reload
 map c clear
 map <esc> unselect
 map dd trash
-map u trash
+map u $trash-restore
 map DD remove
 map t touch
 map m mkdir
