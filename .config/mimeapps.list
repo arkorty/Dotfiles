@@ -7,3 +7,10 @@ image/jpg=nsxiv.desktop
 image/jpeg=nsxiv.desktop
 video/mp4=mpv.desktop
 application/pdf=org.pwmt.zathura.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-8Y6HJ2.desktop
+message/rfc822=userapp-Thunderbird-8Y6HJ2.desktop
+x-scheme-handler/mid=userapp-Thunderbird-8Y6HJ2.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-8Y6HJ2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-8Y6HJ2.desktop;
