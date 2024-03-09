@@ -30,9 +30,9 @@
             //"active": "",
             //"default": ""
         },
-        "persistent-workspaces": {
-            "*": 10,
-        }
+        //"persistent-workspaces": {
+        //    "*": 10,
+        //}
     },
     "keyboard-state": {
         "numlock": true,
