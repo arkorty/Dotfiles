@@ -1,0 +1,15 @@
+#!/bin/sh
+
+
+# start polkit agent
+/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
+
+# start dwl bar
+dwlb &
+
+# start aslstatus
+# pipe its output to dwlb stdin
+aslstatus | dwlb -status-stdin all &
+
+# set wallpaper
+wbg ~/.wall &
