@@ -16,23 +16,23 @@
         "warp-on-scroll": false,
         "format": "{icon}",
         "format-icons": {
-            "1": "term",
-            "2": "devl",
-            "3": "util",
-            "4": "file",
-            "5": "comm",
-            "6": "misc",
-            "7": "misc",
-            "8": "misc",
-            "9": "misc",
-            "10":"misc",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10":"0",
             //"urgent": "",
             //"active": "",
             //"default": ""
         },
-        "persistent-workspaces": {
-            "*": 6,
-        }
+        //"persistent-workspaces": {
+        //    "*": 10,
+        //}
     },
     "keyboard-state": {
         "numlock": true,
