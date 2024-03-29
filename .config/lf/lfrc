@@ -145,7 +145,13 @@ cmd trash ${{
 }}
 
 cmd rsync ${{
-  rsync -ah --info=progress2 $fx $(pwd)
+  rsync -ah --info=progress2 "$fx" $(pwd)
+}}
+
+cmd wall ${{
+  cp "$f" ~/.wall
+  pgrep wbg && pkill wbg
+  setsid -f wbg ~/.wall 2>/dev/null &
 }}
 
 # remove some defaults
@@ -189,7 +195,7 @@ map gb cd ~/.local/bin
 map gt cd ~/.local/share/Trash/files
 
 # set media as ...
-map W $set-wall "$f"
+map W wall
 map L loop
 
 # sync
