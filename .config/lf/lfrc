@@ -1,3 +1,5 @@
+# LF configuration file
+
 # ██╗     ███████╗██████╗  ██████╗
 # ██║     ██╔════╝██╔══██╗██╔════╝
 # ██║     █████╗  ██████╔╝██║     
@@ -5,51 +7,34 @@
 # ███████╗██║     ██║  ██║╚██████╗
 # ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝
 
-# user setting
-set ratios 1:2:4
-set cleaner ~/.config/lf/cleaner
-set previewer ~/.config/lf/preview
-set drawbox true
-set icons true
-set info "size"
+# General settings
+set ratios 1:2                      # Set the pane ratios to 1:2
+set cleaner ~/.config/lf/cleaner    # Set the cleaner script path
+set previewer ~/.config/lf/preview  # Set the previewer script path
+set drawbox true                    # Enable drawing box borders around files
+set icons true                      # Enable icons
+set info "size"                     # Display file size info
 
-# interpreter for shell commands
-set shell sh
+# Shell settings
+set shell sh                        # Set shell to 'sh'
+set shellopts '-eu'                 # Set shell options: '-e' to exit on error, '-u' to error on unset variables
+set ifs "\n"                        # Set internal field separator to newline for proper filename splitting
 
-# set '-eu' options for shell commands
-# These options are used to have safer shell commands. Option '-e' is used to
-# exit on error and option '-u' is used to give error for unset variables.
-# Option '-f' disables pathname expansion which can be useful when $f, $fs, and
-# $fx variables contain names with '*' or '?' characters. However, this option
-# is used selectively within individual commands as it can be limiting at
-# times.
-set shellopts '-eu'
+# Interface settings
+set scrolloff 10                    # Leave some space at the top and bottom of the screen
 
-# set internal field separator (IFS) to "\n" for shell commands
-# This is useful to automatically split file names in $fs and $fx properly
-# since default file separator used in these variables (i.e. 'filesep' option)
-# is newline. You need to consider the values of these options and create your
-# commands accordingly.
-set ifs "\n"
+# Key mappings for shell commands
+map <enter> shell                   # Use Enter key for shell commands
 
-# leave some space at the top and the bottom of the screen
-set scrolloff 10
+# Execute current file
+map x $$f                           # Execute if executable
+map X !$f                           # Execute with 'sh'
 
-# use enter for shell commands
-map <enter> shell
+# File opener actions
+map o &mimeopen $f                  # Open file with 'mimeopen'
+map O $mimeopen --ask $f            # Ask before opening file with 'mimeopen'
 
-# execute current file (must be executable)
-map x $$f
-map X !$f
-
-# dedicated keys for file opener actions
-map o &mimeopen $f
-map O $mimeopen --ask $f
-
-# define a custom 'open' command
-# This command is called when current file is not a directory. You may want to
-# use either file extensions and/or mime types here. Below uses an editor for
-# text files and a file opener for the rest.
+# Define a custom 'open' command
 cmd open ${{
     test -L $f && f=$(readlink -f $f)
     case $(file --mime-type $f -b) in
@@ -58,25 +43,24 @@ cmd open ${{
     esac
 }}
 
-# define a custom 'rename' command without prompt for overwrite
+# Define a custom 'rename' command without prompt for overwrite (commented out)
 #cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 #map r push :rename<space>
 
-# define a custom 'remove' command
+# Define a custom 'remove' command
 cmd remove ${{
     set -f
     printf "$fx\n"
-    printf "Confirm you want to remove the above file(s)? [y/n]: "
+    printf "confirm you want to remove the above file(s)? [y/n]: "
     read ans
     [ "$ans" = "y" ] && rm -rf $fx
 }}
 
-# use '<remove>' key for either 'trash' or 'delete' command
-map <remove> trash
-# map <remove> delete
+# Key mapping for trash or delete command
+map <remove> trash                  # Map delete key to 'trash' command
+#map <remove> delete                # Alternatively, map delete key to 'delete' command (commented out)
 
-# extract the current file with the right command
-# (xkcd link: https://xkcd.com/1168/)
+# Extract files with appropriate commands
 cmd extract ${{
     set -f
     case $f in
@@ -87,49 +71,53 @@ cmd extract ${{
         *.zip) 7z x $f;;
         *.rar) 7z x $f;;
         *.7z) 7z x $f;;
-        *) echo "Unsupported format" ;;
+        *) echo "unsupported format" ;;
     esac
 }}
 
-# compress current file or selected files with tar and gunzip
+# Archive current file or selected files with tar and gzip
 cmd targz ${{
   set -f
   tar cvzf "$f.tar.gz" "$f"
 }}
 
+# Compress current file or selected files into a zip archive
 cmd zip ${{
   set -f
   7z a -tzip "$f.zip" "$f"
 }}
 
+# Compress current file or selected files into a 7z archive
 cmd 7z ${{
   set -f
   7z a "$f.7z" "$f"
 }}
 
-# make directory
+# Create a new directory with user input for the directory name
 cmd mkdir ${{
-  printf "Directory Name: "
+  printf "directory name: "
   read ans
   mkdir $ans
 }}
 
-# make file
+# Create a new file with user input for the file name and open it in the default editor
 cmd touch ${{
-  printf "File Name: "
+  printf "file name: "
   read ans
   $EDITOR $ans
 }}
 
+# Move the current file or selected files to trash
 cmd trash ${{
   trash-put "$f"
 }}
 
+# Loop the current media file infinitely in fullscreen mode using mpv
 cmd loop ${{
   mpv --loop=inf --fullscreen "$f"
 }}
 
-# trash command
+# Improved trash command to handle multiple files
 cmd trash ${{
   files=$(printf "$fx" | tr '\n' ';')
   while [ "$files" ]; do
@@ -144,28 +132,30 @@ cmd trash ${{
   done
 }}
 
+# Synchronize the current or selected files to the current directory with progress information
 cmd rsync ${{
   rsync -ah --info=progress2 "$fx" $(pwd)
 }}
 
+# Set the current file as the desktop wallpaper
 cmd wall ${{
   cp "$f" ~/.wall
   pgrep wbg && pkill wbg
   setsid -f wbg ~/.wall 2>/dev/null &
 }}
 
-# remove some defaults
+# Remove some default key mappings
 map m
 map n
 map "'"
 map '"'
 map d
 
-# basic functionality
+# Basic functionality key mappings
 map p paste
 map x cut
 map y copy
-map ctrl-r reload
+map R reload
 map c clear
 map <esc> unselect
 map dd trash
@@ -174,13 +164,13 @@ map DD remove
 map t touch
 map m mkdir
 
-# archival functionality
+# Archival functionality key mappings
 map ax extract
 map ag targz
 map az zip
 map aZ 7z
 
-# movement
+# Directory navigation key mappings
 map ga cd ~/Archives
 map gA cd ~/Auth
 map gd cd ~/Documents
@@ -194,7 +184,7 @@ map gv cd ~/Videos
 map gb cd ~/.local/bin
 map gt cd ~/.local/share/Trash/files
 
-# set media as ...
+# Set media actions key mappings
 map W wall
 map L loop
 
