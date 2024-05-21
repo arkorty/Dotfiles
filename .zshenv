@@ -29,8 +29,8 @@ compdef _gnu_generic delta
 # environment variables for the proper functioning of certain programs
 
 export QT_QPA_PLATFORM=wayland
-export XDG_CURRENT_DESKTOP=hyprland
-export XDG_SESSION_DESKTOP=hyprland
+export XDG_CURRENT_DESKTOP=river
+export XDG_SESSION_DESKTOP=river
 export XDG_CURRENT_SESSION_TYPE=wayland
 export GDK_BACKEND="wayland,x11"
 export MOZ_ENABLE_WAYLAND=1
