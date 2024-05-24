@@ -33,3 +33,4 @@ mirrorlist /etc/pacman.d/mirrorlist || rm mirrorlist'                        # u
 alias vpn-connect='sudo protonvpn connect --fastest'                         # connect vpn
 alias vpn-disconnect='sudo protonvpn disconnect'                             # disconnect vpn
 alias rm-orphans='paru -Rsnu $(paru -Qdtq)'                                  # remove orphaned packages
+alias reboot-to-windows='systemctl reboot --boot-loader-entry=auto-windows'  # reboot to Windows using systemd-boot
