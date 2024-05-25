@@ -36,6 +36,8 @@ export GDK_BACKEND="wayland,x11"
 export MOZ_ENABLE_WAYLAND=1
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+go env -w GOPATH=$HOME/.local/share/go
+
 # This will run a ssh-agent process if there is not one already, and save the
 # output thereof. If there is one running already, we retrieve the cached
 # ssh-agent output and evaluate it which will set the necessary environment
