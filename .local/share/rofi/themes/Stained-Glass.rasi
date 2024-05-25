@@ -2,8 +2,8 @@
     font:   "JetBrains Mono 9";
 
     background-color:   transparent;
-    text-color:         #ffffff;
-    accent-color:       #ffffff;
+    text-color:         #e7e8eb;
+    accent-color:       #bb97ee;
 
     margin:     0px;
     padding:    0px;
@@ -12,7 +12,7 @@
 
 window {
     background-color:   rgba(0, 0, 0, 80%);
-    border-color:       #ffffff;
+    border-color:       #e7e8eb;
 
     location:   center;
     width:      480px;
@@ -30,7 +30,7 @@ prompt, entry, element-text, element-icon {
 }
 
 prompt {
-    text-color: #ffffff;
+    text-color: #e7e8eb;
 }
 
 listview {
@@ -46,31 +46,31 @@ element {
 }
 
 element normal urgent {
-    text-color: #1a1a1a;
+    text-color: #e27e8d;
 }
 
 element normal active {
-    text-color: #ffffff;
+    text-color: #e7e8eb;
 }
 
 element selected {
-    text-color: #000000;
+    text-color: #0d0f18;
 }
 
 element selected normal {
-    background-color:   #ffffff;
+    background-color:   #e7e8eb;
 }
 
 element selected urgent {
-    background-color:   #1a1a1a;
+    background-color:   #e27e8d;
 }
 
 element selected active {
-    background-color:   #ffffff;
+    background-color:   #e7e8eb;
 }
 
 element-icon {
-    size:   0.75em;
+    size:   1.25em;
 }
 
 element-text {
