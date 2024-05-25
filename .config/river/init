@@ -178,7 +178,7 @@ done
 #riverctl spawn 'mpvpaper -fpo `--loop=inf --hwdec` "*" "$HOME/.loop"'
 
 # Set the wallpaper image
-#riverctl spawn 'wbg "$HOME/.wall"'
+riverctl spawn 'wbg "$HOME/.wall"'
 
 # Set background and border color
 riverctl background-color 0x0d0f18
