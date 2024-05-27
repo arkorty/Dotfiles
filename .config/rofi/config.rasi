@@ -150,4 +150,4 @@ configuration {
   }
 }
 
-@theme "Stained-Glass"
+@theme "/home/ark/.local/share/rofi/themes/Carbonfox.rasi"
