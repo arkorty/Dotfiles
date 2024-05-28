@@ -23,6 +23,12 @@ riverctl spawn waybar
 # Launch Polkit authentication agent
 riverctl spawn /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 
+# Launch KDE Connect daemon
+riverctl spawn kdeconnectd
+
+# Launch dunst
+riverctl spawn dunst
+
 # Map Alt+Print to take a region screenshot and copy to clipboard
 riverctl map normal Alt Print spawn 'slurp | grim -g - $(xdg-user-dir PICTURES)/Screenshots/Screenshot_$(date +%F_%H-%M-%S.png) | wl-copy'
 
