@@ -34,3 +34,5 @@ alias vpn-connect='sudo protonvpn connect --fastest'                         # c
 alias vpn-disconnect='sudo protonvpn disconnect'                             # disconnect vpn
 alias rm-orphans='paru -Rsnu $(paru -Qdtq)'                                  # remove orphaned packages
 alias reboot-to-windows='systemctl reboot --boot-loader-entry=auto-windows'  # reboot to Windows using systemd-boot
+alias usmount='udisksctl mount -b'                                           # mount filesystem in userspace
+alias uumount='udisksctl unmount -b'                                         # unmount filesystem in userspace
