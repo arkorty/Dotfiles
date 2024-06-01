@@ -30,13 +30,13 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-# device stat utility
+# start slstatus
 /usr/local/bin/slstatus &
 
-# compositor
+# start compositor
 /usr/bin/picom &
 
-# battery status notification
+# start battery status notification
 /usr/local/bin/battery &
 
 # restore wallpaper using feh
@@ -44,6 +44,9 @@ fi
 
 # set keyboard layout
 /usr/bin/setxkbmap -layout us -option "caps:swapescape"
+
+# start KDE Connect daemon
+/usr/bin/kdeconnectd &
 
 # polkit agent (manages gui authentication)
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
