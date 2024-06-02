@@ -26,16 +26,7 @@ compdef _gnu_generic delta
 		&& export LF_ICONS
 }
 
-# environment variables for the proper functioning of certain programs
-
-export QT_QPA_PLATFORM=wayland
-export XDG_CURRENT_DESKTOP=river
-export XDG_SESSION_DESKTOP=river
-export XDG_CURRENT_SESSION_TYPE=wayland
-export GDK_BACKEND="wayland,x11"
-export MOZ_ENABLE_WAYLAND=1
-export _JAVA_AWT_WM_NONREPARENTING=1
-
+# set GOPATH according to XDG specs
 go env -w GOPATH=$HOME/.local/share/go
 
 # This will run a ssh-agent process if there is not one already, and save the
