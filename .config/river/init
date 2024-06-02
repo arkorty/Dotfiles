@@ -23,6 +23,17 @@ riverctl spawn waybar
 # Launch Polkit authentication agent
 riverctl spawn /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 
+
+riverctl spawn 'dbus-update-activation-environment --systemd \
+	WAYLAND_DISPLAY \
+	QT_QPA_PLATFORM=wayland \
+	XDG_CURRENT_DESKTOP=river \
+	XDG_SESSION_DESKTOP=river \
+	XDG_CURRENT_SESSION_TYPE=wayland \
+	GDK_BACKEND="wayland,x11" \
+	MOZ_ENABLE_WAYLAND=1 \
+	_JAVA_AWT_WM_NONREPARENTING=1'
+
 # Launch KDE Connect daemon
 riverctl spawn kdeconnectd
 
