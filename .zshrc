@@ -70,3 +70,6 @@ alias bm='udisksctl mount -b'
 
 # bumount: Unmount block device using 'udisksctl'
 alias bu='udisksctl unmount -b'
+
+# reload-river: Reinitialize river
+alias reload-river='~/.config/river/init'
