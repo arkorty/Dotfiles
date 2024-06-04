@@ -1,33 +1,72 @@
-HISTFILE=$HOME/.zsh_history                                                  # histfile
-HISTSIZE=10000                                                               # history size
-SAVEHIST=10000                                                               # histfile size
+# Configuration for Zsh history management
+HISTFILE=$HOME/.zsh_history                 # Path to the history file
+HISTSIZE=10000                              # Maximum number of entries in history
+SAVEHIST=10000                              # Maximum number of entries to save in the history file
 
-# zsh function to start and fork a process
-# stdout(-err) gets redirected to /dev/null
+# Function to start and fork a process, redirecting stdout and stderr to /dev/null
 fork() {
-  setsid --fork $@ > /dev/null 2>&1 &
+  setsid --fork $@ > /dev/null 2>&1 &       # Start and fork process in background
 }
 
-alias ls='eza'                                                               # modern ls alternative
-alias ll='eza -lh'                                                           # human readable list
-alias la='eza -lah'                                                          # human readable list all
-alias lt='eza -T'                                                            # tree style list
-alias l1='eza -1'                                                            # single line list
-alias lf='lfrun'                                                             # shorter alias for lfrun
-alias cat='bat -p'                                                           # bat as cat
-alias aria2c='aria2c -d $HOME/Downloads'                                     # aria2c with download path
-alias loop='mpv --loop=inf --fullscreen'                                     # loop videos via mpv
-alias skinstall='rm -f config.h patches.h && sudo make clean install'        # suckless make install command
+# Enhanced ls aliases for improved listing experience
+
+# ls: Enhanced ls alternative
+alias ls='eza'
+
+# ll: Human-readable list with detailed information
+alias ll='eza -lh'
+
+# la: Human-readable list with detailed information including hidden files
+alias la='eza -lah'
+
+# lt: Tree-style list with hierarchical representation
+alias lt='eza -TL'
+
+# lT: Tree-style list with hierarchical representation
+alias lT='eza -T'
+
+# l1: Single line list for compact display
+alias l1='eza -1'
+
+# lf: Shorter alias for running lfrun command
+alias lf='lfrun'
+
+# cat: Enhanced 'cat' command using 'bat' for syntax highlighting
+alias cat='bat -p'
+
+# aria2c: Enhanced 'aria2c' command with default download path set to $HOME/Downloads
+alias aria2c='aria2c -d $HOME/Downloads'
+
+# loop: Loop videos infinitely in fullscreen mode using 'mpv'
+alias loop='mpv --loop=inf --fullscreen'
+
+# fastfetch: Fast alternative to 'neofetch' with customized logo and information
 alias fastfetch='fastfetch --load-config examples/2 --logo-type builtin \
---logo arch --logo-padding 2 --logo-padding-top 1'                           # fast neofetch alternative
+--logo arch --logo-padding 2 --logo-padding-top 1'
+
+# rate-mirrors: Rate and prioritize mirrors for Arch Linux based on specific criteria
 alias rate-mirrors='rate-mirrors --protocol https --entry-country india \
-arch'                                                                        # rate mirrors
+arch'
+
+# update-mirrors: Update pacman mirrors by rating and selecting appropriate mirrors
 alias update-mirrors='rate-mirrors | tee mirrorlist; printf "Sure you want \
 to overwrite the mirrorlist? [y/N]: "; read ok; [ "$ok" = "y" ] && sudo mv \
-mirrorlist /etc/pacman.d/mirrorlist || rm mirrorlist'                        # update pacman mirrors
-alias vpn-connect='sudo protonvpn connect --fastest'                         # connect vpn
-alias vpn-disconnect='sudo protonvpn disconnect'                             # disconnect vpn
-alias orphandel='paru -Rsnu $(paru -Qdtq)'                                   # remove orphaned packages
-alias boot2win='systemctl reboot --boot-loader-entry=auto-windows'           # reboot to Windows using systemd-boot
-alias udm='udisksctl mount -b'                                               # mount block device
-alias udu='udisksctl unmount -b'                                             # unmount block device
+mirrorlist /etc/pacman.d/mirrorlist || rm mirrorlist'
+
+# vpnon: Connect to VPN using ProtonVPN with fastest server
+alias vpn-on='sudo protonvpn connect --fastest'
+
+# vpnoff: Disconnect from ProtonVPN
+alias vpn-off='sudo protonvpn disconnect'
+
+# orphandel: Remove orphaned packages using Paru package manager
+alias purge-orphan='paru -Rsnu $(paru -Qdtq)'
+
+# boot2win: Reboot system into Windows using systemd-boot
+alias reboot-to-windows='systemctl reboot --boot-loader-entry=auto-windows'
+
+# bmount: Mount block device using 'udisksctl'
+alias bm='udisksctl mount -b'
+
+# bumount: Unmount block device using 'udisksctl'
+alias bu='udisksctl unmount -b'
