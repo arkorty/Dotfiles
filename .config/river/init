@@ -18,7 +18,7 @@ riverctl input "pointer-1267-12579-ELAN0E04:00_04F3:3123_Touchpad" tap enabled
 riverctl keyboard-layout -options "caps:swapescape" us
 
 # Launch Waybar
-riverctl spawn waybar
+riverctl spawn 'pgrep waybar || waybar'
 
 # Launch Polkit authentication agent
 riverctl spawn /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
@@ -49,8 +49,8 @@ riverctl map normal Alt+Shift A spawn pavucontrol
 # Map Alt+Shift+N to launch nmtui in a floating terminal
 riverctl map normal Alt+Shift N spawn 'alacritty --class floatingterm,floatingterm -e nmtui'
 
-# Map Alt+Shift+B to launch bluetuith in a floating terminal
-riverctl map normal Alt+Shift B spawn 'alacritty --class floatingterm,floatingterm -e bluetuith'
+# Map Alt+Shift+B to launch bluetui in a floating terminal
+riverctl map normal Alt+Shift B spawn 'alacritty --class floatingterm,floatingterm -e bluetui'
 
 # Map Alt+Shift+L to lock the screen with swaylock
 riverctl map normal Alt+Shift L spawn 'swaylock -feS --effect-blur 4x3 --effect-greyscale --indicator-radius 24 --indicator-thickness 8 --indicator-x-position 64 --indicator-y-position 64'
@@ -173,8 +173,8 @@ do
     riverctl map $mode None XF86Eject spawn 'eject -T'
 
     # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
-    riverctl map $mode None XF86AudioRaiseVolume  spawn 'wpctl set-volume -l 0.8 @DEFAULT_SINK@ 0.05+'
-    riverctl map $mode None XF86AudioLowerVolume  spawn 'wpctl set-volume -l 0.8 @DEFAULT_SINK@ 0.05-'
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'wpctl set-volume -l 1.0 @DEFAULT_SINK@ 0.05+'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'wpctl set-volume -l 1.0 @DEFAULT_SINK@ 0.05-'
     riverctl map $mode None XF86AudioMute         spawn 'wpctl set-mute @DEFAULT_SINK@ toggle'
 
     # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
