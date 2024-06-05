@@ -270,3 +270,5 @@ riverctl map normal Alt I send-layout-cmd wideriver "--count +1"
 # Map Alt+D to decrease the count in the layout
 riverctl map normal Alt D send-layout-cmd wideriver "--count -1"
 
+# Map Alt+Tab to focus previous tags
+riverctl map normal Alt Tab focus-previous-tags
