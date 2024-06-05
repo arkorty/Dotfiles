@@ -41,7 +41,7 @@ riverctl spawn kdeconnectd
 riverctl spawn dunst
 
 # Map Alt+Print to take a region screenshot and copy to clipboard
-riverctl map normal Alt Print spawn 'slurp | grim -g - $(xdg-user-dir PICTURES)/Screenshots/Screenshot_$(date +%F_%H-%M-%S.png) | wl-copy'
+riverctl map normal Alt Print spawn 'slurp | grim -g - $(xdg-user-dir PICTURES)/Screenshots/Screenshot_$(date +%Y%m%d_%H%M%S.png) | wl-copy'
 
 # Map Alt+Shift+A to launch PulseAudio Volume Control
 riverctl map normal Alt+Shift A spawn pavucontrol
@@ -188,7 +188,7 @@ do
     riverctl map $mode None XF86MonBrightnessDown spawn 'xbacklight -dec 5 -steps 5'
 
     # Map Print to take a screenshot and copy to clipboard
-    riverctl map $mode None Print spawn 'grim $(xdg-user-dir PICTURES)/Screenshots/Screenshot_$(date +%F_%H-%M-%S.png) | wl-copy'
+    riverctl map $mode None Print spawn 'grim $(xdg-user-dir PICTURES)/Screenshots/Screenshot_$(date +%Y%m%d_%H%M%S.png) | wl-copy'
 done
 
 # Start mpvpaper with specific options to loop the wallpaper video
