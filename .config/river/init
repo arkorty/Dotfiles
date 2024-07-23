@@ -213,6 +213,7 @@ riverctl rule-add ssd
 riverctl rule-add -app-id 'org.pulseaudio.pavucontrol'  float
 riverctl rule-add -app-id 'floatingterm'                float
 riverctl rule-add -app-id 'localsend_app'               float
+riverctl rule-add -app-id 'galculator'                  float
 
 riverctl rule-add -app-id 'Code'                    tags $((1 << 0))
 riverctl rule-add -app-id 'neovide'                 tags $((1 << 0))
