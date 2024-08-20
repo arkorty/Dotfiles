@@ -1,26 +1,31 @@
+# Colorscheme (hardhacker)
+
+# Default colors
 [colors.primary]
-background = '#161616'
-foreground = '#f2f4f8'
+background = '#282433'
+foreground = '#eee9fc'
 
+# Normal colors
 [colors.normal]
-black   = '#282828'
-red     = '#ee5396'
-green   = '#25be6a'
-yellow  = '#08bdba'
-blue    = '#78a9ff'
-magenta = '#be95ff'
-cyan    = '#33b1ff'
-white   = '#dfdfe0'
+black   = '#282433'
+red     = '#e965a5'
+green   = '#b1f2a7'
+yellow  = '#ebde76'
+blue    = '#b1baf4'
+magenta = '#e192ef'
+cyan    = '#b3f4f3'
+white   = '#eee9fc'
 
+# Bright colors
 [colors.bright]
-black   = '#484848'
-red     = '#f16da6'
-green   = '#46c880'
-yellow  = '#2dc7c4'
-blue    = '#8cb6ff'
-magenta = '#c8a5ff'
-cyan    = '#52bdff'
-white   = '#e4e4e5'
+black   = '#3f3951'
+red     = '#e965a5'
+green   = '#b1f2a7'
+yellow  = '#ebde76'
+blue    = '#b1baf4'
+magenta = '#e192ef'
+cyan    = '#b3f4f3'
+white   = '#eee9fc'
 
 [font]
 size = 10.5
@@ -30,7 +35,7 @@ family = 'JetBrainsMono Nerd Font'
 style = 'Bold'
 
 [window]
-opacity = 0.9
+opacity = 1.0
 
 [window.padding]
 x = 4
