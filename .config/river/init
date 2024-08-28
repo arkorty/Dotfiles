@@ -212,14 +212,16 @@ riverctl rule-add ssd
 
 riverctl rule-add -app-id 'org.pulseaudio.pavucontrol'  float
 riverctl rule-add -app-id 'floatingterm'                float
-riverctl rule-add -app-id 'localsend_app'               float
+riverctl rule-add -app-id 'localsend'                   float
 riverctl rule-add -app-id 'galculator'                  float
+riverctl rule-add -app-id 'Bitwarden'                   float
+riverctl rule-add -app-id 'Gimp-2.10'                   float
 
 riverctl rule-add -app-id 'Code'                        tags $((1 << 0))
 riverctl rule-add -app-id 'neovide'                     tags $((1 << 0))
 riverctl rule-add -app-id 'Gimp-2.10'                   tags $((1 << 1))
 riverctl rule-add -app-id 'org.pipewire.Helvum'         tags $((1 << 1))
-riverctl rule-add -app-id 'ghb'                         tags $((1 << 1))
+riverctl rule-add -app-id 'fr.handbrake.ghb'            tags $((1 << 1))
 riverctl rule-add -app-id 'nemo'                        tags $((1 << 1))
 riverctl rule-add -app-id 'foot'                        tags $((1 << 1))
 riverctl rule-add -app-id 'firefox'                     tags $((1 << 2))
@@ -231,7 +233,7 @@ riverctl rule-add -app-id 'discord'                     tags $((1 << 4))
 riverctl rule-add -app-id 'org.telegram.desktop'        tags $((1 << 4))
 riverctl rule-add -app-id 'Spotify'                     tags $((1 << 5))
 riverctl rule-add -app-id 'com.obsproject.Studio'       tags $((1 << 6))
-riverctl rule-add -app-id 'org.qBittorrent.qBittorrent' tags $((1 << 6))
+riverctl rule-add -app-id 'org.qbittorrent.qBittorrent' tags $((1 << 6))
 riverctl rule-add -app-id 'com.usebottles.bottles'      tags $((1 << 6))
 
 # Set the default layout generator to be wideriver and start it.
