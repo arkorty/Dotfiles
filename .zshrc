@@ -35,35 +35,31 @@ alias lf='lfrun'
 alias cat='bat -p'
 
 # aria2c: Enhanced 'aria2c' command with default download path set to $HOME/Downloads
-alias aria2c='aria2c -d $HOME/Downloads'
+alias aria='aria2c -d $HOME/Downloads'
 
 # loop: Loop videos infinitely in fullscreen mode using 'mpv'
 alias loop='mpv --loop=inf --fullscreen'
 
 # fastfetch: Fast alternative to 'neofetch' with customized logo and information
-alias fastfetch='fastfetch --load-config examples/2 --logo-type builtin \
+alias ff='fastfetch --load-config examples/2 --logo-type builtin \
 --logo arch --logo-padding 2 --logo-padding-top 1'
 
-# rate-mirrors: Rate and prioritize mirrors for Arch Linux based on specific criteria
-alias rate-mirrors='rate-mirrors --protocol https --entry-country india \
-arch'
-
 # update-mirrors: Update pacman mirrors by rating and selecting appropriate mirrors
-alias update-mirrors='rate-mirrors | tee mirrorlist; printf "Sure you want \
+alias um='rate-mirrors --protocol https --entry-country india arch | tee mirrorlist; printf "Sure you want \
 to overwrite the mirrorlist? [y/N]: "; read ok; [ "$ok" = "y" ] && sudo mv \
 mirrorlist /etc/pacman.d/mirrorlist || rm mirrorlist'
 
 # vpnon: Connect to VPN using ProtonVPN with fastest server
-alias vpn-on='sudo protonvpn connect --fastest'
+alias vo='sudo protonvpn connect --fastest'
 
 # vpnoff: Disconnect from ProtonVPN
-alias vpn-off='sudo protonvpn disconnect'
+alias vf='sudo protonvpn disconnect'
 
 # orphandel: Remove orphaned packages using Paru package manager
-alias purge-orphan='paru -Rsnu $(paru -Qdtq)'
+alias po='paru -Rsnu $(paru -Qdtq)'
 
 # boot2win: Reboot system into Windows using systemd-boot
-alias reboot-to-windows='systemctl reboot --boot-loader-entry=auto-windows'
+alias r2w='systemctl reboot --boot-loader-entry=auto-windows'
 
 # bmount: Mount block device using 'udisksctl'
 alias bm='udisksctl mount -b'
@@ -72,4 +68,4 @@ alias bm='udisksctl mount -b'
 alias bu='udisksctl unmount -b'
 
 # reload-river: Reinitialize river
-alias reload-river='~/.config/river/init'
+alias rr='~/.config/river/init'
