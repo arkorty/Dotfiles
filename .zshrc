@@ -34,38 +34,49 @@ alias lf='lfrun'
 # cat: Enhanced 'cat' command using 'bat' for syntax highlighting
 alias cat='bat -p'
 
-# aria2c: Enhanced 'aria2c' command with default download path set to $HOME/Downloads
-alias aria='aria2c -d $HOME/Downloads'
-
 # loop: Loop videos infinitely in fullscreen mode using 'mpv'
 alias loop='mpv --loop=inf --fullscreen'
 
-# fastfetch: Fast alternative to 'neofetch' with customized logo and information
+# ff: Fast alternative to 'neofetch' with customized logo and information
 alias ff='fastfetch --load-config examples/2 --logo-type builtin \
 --logo arch --logo-padding 2 --logo-padding-top 1'
 
-# update-mirrors: Update pacman mirrors by rating and selecting appropriate mirrors
+# um: Update pacman mirrors by rating and selecting appropriate mirrors
 alias um='rate-mirrors --protocol https --entry-country india arch | tee mirrorlist; printf "Sure you want \
 to overwrite the mirrorlist? [y/N]: "; read ok; [ "$ok" = "y" ] && sudo mv \
 mirrorlist /etc/pacman.d/mirrorlist || rm mirrorlist'
 
-# vpnon: Connect to VPN using ProtonVPN with fastest server
+# od: Remove orphaned packages using Paru package manager
+alias od='paru -Rsnu $(paru -Qdtq)'
+
+# non-interactive aliases
+
+# dl: Enhanced 'aria2c' command with default download path set to $HOME/Downloads
+alias dl='aria2c -d $HOME/Downloads'
+
+# vo: Connect to VPN using ProtonVPN with fastest server
 alias vo='sudo protonvpn connect --fastest'
 
-# vpnoff: Disconnect from ProtonVPN
+# vf: Disconnect from ProtonVPN
 alias vf='sudo protonvpn disconnect'
 
-# orphandel: Remove orphaned packages using Paru package manager
-alias po='paru -Rsnu $(paru -Qdtq)'
+# rw: Reboot system into Windows using systemd-boot
+alias rw='systemctl reboot --boot-loader-entry=auto-windows'
 
-# boot2win: Reboot system into Windows using systemd-boot
-alias r2w='systemctl reboot --boot-loader-entry=auto-windows'
-
-# bmount: Mount block device using 'udisksctl'
+# bm: Mount block device using 'udisksctl'
 alias bm='udisksctl mount -b'
 
-# bumount: Unmount block device using 'udisksctl'
+# bu: Unmount block device using 'udisksctl'
 alias bu='udisksctl unmount -b'
 
-# reload-river: Reinitialize river
+# rr: Reinitialize river
 alias rr='~/.config/river/init'
+
+# sb: Set brightness using ddcutil
+alias sb='ddcutil --brief --display 1 setvcp 10'
+
+# ss: Put screen saver
+alias ss='mpv --fullscreen --loop=inf $HOME/.loop'
+
+# sleep: Suspend system using systemctl
+alias sleep='systemctl suspend'
