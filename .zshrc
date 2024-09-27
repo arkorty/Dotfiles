@@ -49,6 +49,9 @@ mirrorlist /etc/pacman.d/mirrorlist || rm mirrorlist'
 # od: Remove orphaned packages using Paru package manager
 alias od='paru -Rsnu $(paru -Qdtq)'
 
+# xsh: Set TERM to xterm-256color and ssh
+alias xsh='TERM=xterm-256color ssh'
+
 # non-interactive aliases
 
 # dl: Enhanced 'aria2c' command with default download path set to $HOME/Downloads
