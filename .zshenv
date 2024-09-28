@@ -27,7 +27,7 @@ compdef _gnu_generic delta
 }
 
 # set GOPATH according to XDG specs
-go env -w GOPATH=$HOME/.local/share/go
+command -v go >/dev/null 2>&1 && go env -w GOPATH="$HOME/.local/share/go"
 
 # This will run a ssh-agent process if there is not one already, and save the
 # output thereof. If there is one running already, we retrieve the cached
