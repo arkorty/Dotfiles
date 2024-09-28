@@ -52,6 +52,10 @@ alias od='paru -Rsnu $(paru -Qdtq)'
 # xsh: Set TERM to xterm-256color and ssh
 alias xsh='TERM=xterm-256color ssh'
 
+alias p='paru'  # Shorter alias for 'paru' package manager
+alias n='nvim'  # Shorter alias for 'nvim' text editor
+alias g='git'   # Shorter alias for 'git' version control
+
 # non-interactive aliases
 
 # dl: Enhanced 'aria2c' command with default download path set to $HOME/Downloads
