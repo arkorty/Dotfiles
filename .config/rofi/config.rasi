@@ -150,4 +150,4 @@ configuration {
   }
 }
 
-@theme "/home/ark/.local/share/rofi/themes/Carbonfox.rasi"
+@theme "~/.local/share/rofi/themes/Carbonfox.rasi"
