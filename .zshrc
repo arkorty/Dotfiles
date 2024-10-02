@@ -61,6 +61,9 @@ alias ssh='TERM=xterm-256color ssh'
 # aria: Enhanced 'aria2c' command with default download path set to $HOME/Downloads
 alias aria='aria2c -d $HOME/Downloads'
 
+# clone : Clone a GitHub repository using github-cli and fzf
+alias clone='gh repo clone $(gh repo ls | fzf | awk "{print $1}")'
+
 alias p='paru'  # Shorter alias for 'paru' package manager
 alias n='nvim'  # Shorter alias for 'nvim' text editor
 alias g='git'   # Shorter alias for 'git' version control
