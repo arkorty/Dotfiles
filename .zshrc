@@ -55,7 +55,7 @@ alias mnt='udisksctl mount -b'
 # umnt: Unmount block device using 'udisksctl'
 alias umnt='udisksctl unmount -b'
 
-# xsh: Set TERM to xterm-256color and ssh
+# ssh: Set TERM to xterm-256color and ssh
 alias ssh='TERM=xterm-256color ssh'
 
 # aria: Enhanced 'aria2c' command with default download path set to $HOME/Downloads
