@@ -8,8 +8,8 @@
 }
 
 window#waybar {
-  background-color: rgba(40, 40, 40, 0.9); /* background (#282828) */
-  color: #ebdbb2; /*  text */
+  background-color: rgba(22, 22, 22, 0.9);
+  color: #e7e8eb;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -28,25 +28,25 @@ button {
 
 #tags button {
   padding: 0 4px;
-  color: #928374; /* Gruvbox gray (#928374) */
+  color: #6a6a6a;
   background-color: transparent;
 }
 
 #tags button.occupied {
-  color: #ebdbb2; /* Gruvbox light text (#ebdbb2) */
+  color: #e7e8eb;
 }
 
 #tags button.focused {
-  background: rgba(255, 255, 255, 0.17); /* Slight transparency */
+  background: rgba(255, 255, 255, 0.17);
 }
 
 #tags button.urgent {
-  background-color: #cc241d; /* Gruvbox red (#cc241d) */
+  background-color: #eb4d4b;
 }
 
 #mode {
-  background-color: #458588; /* Gruvbox blue (#458588) */
-  border-bottom: 3px solid #ebdbb2; /* Gruvbox light text */
+  background-color: #64727d;
+  border-bottom: 3px solid #e7e8eb;
 }
 
 #clock,
@@ -66,7 +66,7 @@ button {
 #scratchpad,
 #mpd {
   padding: 0 10px;
-  color: #ebdbb2; /* Gruvbox light text */
+  color: #e7e8eb;
 }
 
 #window,
@@ -94,20 +94,20 @@ button {
 
 #battery.charging,
 #battery.plugged {
-  color: #ebdbb2; /* Gruvbox light text */
-  background-color: #98971a; /* Gruvbox green (#98971a) */
+  color: #e7e8eb;
+  background-color: #26a65b;
 }
 
 @keyframes blink {
   to {
-    background-color: #ebdbb2;
-    color: #282828; /* Gruvbox dark background (#282828) */
+    background-color: #e7e8eb;
+    color: #0d0f18;
   }
 }
 
 #battery.critical:not(.charging) {
-  background-color: #cc241d; /* Gruvbox red (#cc241d) */
-  color: #ebdbb2;
+  background-color: #f53c3c;
+  color: #e7e8eb;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -116,7 +116,7 @@ button {
 }
 
 label:focus {
-  background-color: #282828; /* Gruvbox dark background */
+  background-color: #0d0f18;
 }
 
 #cpu {
@@ -128,7 +128,7 @@ label:focus {
 }
 
 #disk {
-  background-color: #d65d0e; /* Gruvbox orange (#d65d0e) */
+  background-color: #964b00;
 }
 
 #backlight {
@@ -140,7 +140,7 @@ label:focus {
 }
 
 #network.disconnected {
-  background-color: #cc241d; /* Gruvbox red (#cc241d) */
+  background-color: #f53c3c;
 }
 
 #pulseaudio {
@@ -148,8 +148,8 @@ label:focus {
 }
 
 #pulseaudio.muted {
-  background-color: #cc241d; /* Gruvbox red */
-  color: #282828; /* Gruvbox dark background */
+  background-color: #f53c3c;
+  color: #0d0f18;
 }
 
 #wireplumber {
@@ -157,31 +157,31 @@ label:focus {
 }
 
 #wireplumber.muted {
-  background-color: #cc241d; /* Gruvbox red */
+  background-color: #f53c3c;
 }
 
 #custom-media {
-  background-color: #b8bb26; /* Gruvbox yellow-green (#b8bb26) */
-  color: #282828; /* Gruvbox dark background */
+  background-color: #66cc99;
+  color: #2a5c45;
   min-width: 100px;
 }
 
 #custom-media.custom-spotify {
-  background-color: #b8bb26; /* Gruvbox yellow-green */
+  background-color: #66cc99;
 }
 
 #custom-media.custom-vlc {
-  background-color: #d79921; /* Gruvbox yellow-orange */
+  background-color: #ffa000;
 }
 
 #temperature {
-  background-color: #d79921; /* Gruvbox yellow */
-  color: #282828; /* Gruvbox dark background */
+  background-color: #f0932b;
+  color: #0d0f18;
 }
 
 #temperature.critical {
-  background-color: #cc241d; /* Gruvbox red */
-  color: #282828; /* Gruvbox dark background */
+  background-color: #eb4d4b;
+  color: #0d0f18;
 }
 
 #tray {
@@ -194,46 +194,46 @@ label:focus {
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-  background-color: #cc241d; /* Gruvbox red */
+  background-color: #eb4d4b;
 }
 
 #idle_inhibitor {
-  background-color: #504945; /* Gruvbox gray (#504945) */
+  background-color: #2d3436;
 }
 
 #idle_inhibitor.activated {
-  background-color: #ebdbb2; /* Gruvbox light text */
-  color: #282828; /* Gruvbox dark background */
+  background-color: #ecf0f1;
+  color: #2d3436;
 }
 
 #mpd {
-  background-color: #b8bb26; /* Gruvbox yellow-green */
-  color: #282828; /* Gruvbox dark background */
+  background-color: #66cc99;
+  color: #2a5c45;
 }
 
 #mpd.disconnected {
-  background-color: #cc241d; /* Gruvbox red */
+  background-color: #f53c3c;
 }
 
 #mpd.stopped {
-  background-color: #83a598; /* Gruvbox aqua/cyan (#83a598) */
+  background-color: #90b1b1;
 }
 
 #mpd.paused {
-  background-color: #689d6a; /* Gruvbox green-blue (#689d6a) */
+  background-color: #51a37a;
 }
 
 #language {
-  background: #d3869b; /* Gruvbox purple (#d3869b) */
-  color: #282828; /* Gruvbox dark background */
+  background: #00b093;
+  color: #740864;
   padding: 0 5px;
   margin: 0 5px;
   min-width: 16px;
 }
 
 #keyboard-state {
-  background: #8ec07c; /* Gruvbox aqua/cyan */
-  color: #282828;
+  background: #97e1ad;
+  color: #0d0f18;
   padding: 0 0px;
   margin: 0 5px;
   min-width: 16px;
