@@ -1,31 +1,40 @@
-# Colours (Monokai Charcoal)
+# Colors (Kanagawa Dragon)
 
-# Default Colours
 [colors.primary]
-background = '#000000'
-foreground = '#FFFFFF'
+background = '#181616'
+foreground = '#c5c9c5'
 
-# Normal Colours
 [colors.normal]
-black   = '#1a1a1a'
-red     = '#f4005f'
-green   = '#98e024'
-yellow  = '#fa8419'
-blue    = '#9d65ff'
-magenta = '#f4005f'
-cyan    = '#58d1eb'
-white   = '#c4c5b5'
+black   = '#0d0c0c'
+blue    = '#8ba4b0'
+cyan    = '#8ea4a2'
+green   = '#8a9a7b'
+magenta = '#a292a3'
+red     = '#c4746e'
+white   = '#C8C093'
+yellow  = '#c4b28a'
 
-# Bright Colours
 [colors.bright]
-black   = '#625e4c'
-red     = '#f4005f'
-green   = '#98e024'
-yellow  = '#e0d561'
-blue    = '#9d65ff'
-magenta = '#f4005f'
-cyan    = '#58d1eb'
-white   = '#f6f6ef'
+black   = '#a6a69c'
+blue    = '#7FB4CA'
+cyan    = '#7AA89F'
+green   = '#87a987'
+magenta = '#938AA9'
+red     = '#E46876'
+white   = '#c5c9c5'
+yellow  = '#E6C384'
+
+[colors.selection]
+background = '#2d4f67'
+foreground = '#c8c093'
+
+[[colors.indexed_colors]]
+index = 16
+color = '#ffa066'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#ff5d62'
 
 [font]
 size = 10.5
