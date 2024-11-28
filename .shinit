@@ -1,5 +1,14 @@
 #!/bin/sh
 
 if tty -s; then
+    if [ -z "$TMUX" ]; then
+        if tmux list-sessions 2>/dev/null | grep -q '(attached)'; then
+            exec tmux new-session zsh
+        elif tmux has-session 2>/dev/null; then
+            exec tmux attach-session
+        else
+            exec tmux new-session zsh
+        fi
+    fi
     exec zsh
 fi
