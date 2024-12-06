@@ -49,11 +49,11 @@ mirrorlist /etc/pacman.d/mirrorlist || rm mirrorlist'
 # orphandel: Remove orphaned packages using Paru package manager
 alias orphandel='paru -Rsnu $(paru -Qdtq)'
 
-# mnt: Mount block device using 'udisksctl'
-alias mnt='udisksctl mount -b'
+# udiskm: Mount block device using 'udisksctl'
+alias udiskm='udisksctl mount -b'
 
-# umnt: Unmount block device using 'udisksctl'
-alias umnt='udisksctl unmount -b'
+# udisku: Unmount block device using 'udisksctl'
+alias udisku='udisksctl unmount -b'
 
 # ssh: Set TERM to xterm-256color and ssh
 alias ssh='TERM=xterm-256color ssh'
@@ -64,20 +64,10 @@ alias aria='aria2c -d $HOME/Downloads'
 # clone : Clone a GitHub repository using github-cli and fzf
 alias clone='gh repo clone $(gh repo ls | fzf | awk '\''{print $1}'\'')'
 
-alias p='paru'  # Shorter alias for 'paru' package manager
-alias n='nvim'  # Shorter alias for 'nvim' text editor
-alias g='git'   # Shorter alias for 'git' version control
-
 # non-interactive aliases
 
-# vpn-connect: Connect to VPN using ProtonVPN with fastest server
-alias vpn-connect='sudo protonvpn connect --fastest'
-
-# vpn-disconnect: Disconnect from ProtonVPN
-alias vpn-disconnect='sudo protonvpn disconnect'
-
 # reboot-to-win: Reboot system into Windows using systemd-boot
-alias reboot-to-win='systemctl reboot --boot-loader-entry=auto-windows'
+alias windows='systemctl reboot --boot-loader-entry=auto-windows'
 
 # reload: Reinitialize river
 alias reload='~/.config/river/init'
