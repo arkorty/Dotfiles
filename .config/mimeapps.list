@@ -5,6 +5,7 @@ image/webp=nsxiv.desktop
 image/png=nsxiv.desktop
 image/jpg=nsxiv.desktop
 image/jpeg=nsxiv.desktop
+image/heif=nsxiv.desktop
 video/mp4=mpv.desktop
 application/pdf=org.pwmt.zathura.desktop
 x-scheme-handler/mailto=userapp-Thunderbird-8Y6HJ2.desktop
@@ -22,6 +23,7 @@ application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
 x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-8Y6HJ2.desktop;
