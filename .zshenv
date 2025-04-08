@@ -7,6 +7,8 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # add syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+source /usr/share/nvm/init-nvm.sh
+
 # export LS_COLORS
 eval "$(dircolors -b ~/.dircolors)"
 
