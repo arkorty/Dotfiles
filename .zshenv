@@ -36,6 +36,8 @@ command -v go >/dev/null 2>&1 && go env -w GOPATH="$HOME/.local/share/go"
 # ssh-agent output and evaluate it which will set the necessary environment
 # variables. The lifetime of the unlocked keys is set to 1 hour.
 
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
 fi
