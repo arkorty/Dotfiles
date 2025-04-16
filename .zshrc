@@ -49,6 +49,9 @@ mirrorlist /etc/pacman.d/mirrorlist || rm mirrorlist'
 # orphandel: Remove orphaned packages using Paru package manager
 alias orphandel='paru -Rsnu $(paru -Qdtq)'
 
+alias bgupdate='pkexec pacman -Syu --noconfirm > /tmp/pacman_update.log 2>&1 &\
+disown'
+
 # udiskm: Mount block device using 'udisksctl'
 alias udiskm='udisksctl mount -b'
 
@@ -64,7 +67,9 @@ alias aria='aria2c -d $HOME/Downloads'
 # clone : Clone a GitHub repository using github-cli and fzf
 alias clone='gh repo clone $(gh repo ls | fzf | awk '\''{print $1}'\'')'
 
+# =======================
 # non-interactive aliases
+# =======================
 
 # reboot-to-win: Reboot system into Windows using systemd-boot
 alias windows='systemctl reboot --boot-loader-entry=auto-windows'
