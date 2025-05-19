@@ -6,6 +6,11 @@
 # Some git/GPG fix
 export GPG_TTY=$(tty)
 
+# NVM related paths
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 # Function to start and fork a process, redirecting stdout and stderr to /dev/null
 fork() {
   nohup $@ > /dev/null 2>&1 &               # macOS alternative to setsid
@@ -35,8 +40,7 @@ fi
 
 # fastfetch: Fast alternative to 'neofetch' with customized logo and information
 if command -v fastfetch >/dev/null; then
-  alias fastfetch='fastfetch --load-config examples/2 --logo-type builtin \
-  --logo arch --logo-padding 2 --logo-padding-top 1'
+  alias fastfetch='fastfetch --load-config examples/2'
 fi
 
 # ssh: Set TERM to xterm-256color and ssh
